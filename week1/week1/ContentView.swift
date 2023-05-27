@@ -15,7 +15,6 @@
 //      content3: ZStack; Image1, Text1, Button1, onTapGesture -> flip
 //      content4: HStack; Text3; padding, foregroundColor, border-radius
 
-
 import SwiftUI
 
 struct ContentView: View {
@@ -46,8 +45,8 @@ struct ContentView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .frame(height: 51)
-                .padding([.top], 12)
-                .padding([.bottom], 20)
+                .padding([.top])
+                .padding([.bottom])
                 
                 // content2: HStack; Text1, Text2
                 VStack(alignment: .leading){
@@ -100,11 +99,11 @@ struct ContentView: View {
                 .frame(width: 343, height: 463)
                 .padding([.bottom], 30)
                 .onTapGesture {
-                    withAnimation {
+                    withAnimation(.linear(duration: 0.5)) {
                         flip.toggle()
                     }
                 }
-                .rotation3DEffect(.degrees(flip ? 180 : 0), axis: (x: 0, y: 1, z: 0))
+                .rotation3DEffect(.degrees(flip ? 180 : 0), axis: (x: 0, y: 1, z: 0), perspective: 0.2)
                 
                 // content4: HStack; Text1; padding, foregroundColor, border-radius
                 HStack{
@@ -124,7 +123,6 @@ struct ContentView: View {
             .padding([.leading, .trailing], 25)
         }
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
