@@ -29,27 +29,32 @@
 // 5. SectionThird
 // ZStack { Text, VStack { Text, Text, Image } -> Swipe }
 
+// 문제 : 특정 struct에 horizontal padding을 붙이면, 다른 struct의 padding 변함. 왜 ??
 
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ScrollView {
-            ZStack {
-                VStack{
-                    TitleBar()
-                    Divider()
-                    SwipePromotion()
-                    Divider()
-                    SectionFirst()
-                    SectionFirstBottom()
-                    SectionSecond()
-                    SectionSecondBottom()
-                    SwipeProduct()
+        ZStack {
+            ScrollView {
+                TitleBar()
+                    .padding(.horizontal)
+                Divider()
+                    .padding(.horizontal)
+                SwipePromotion()
+                Divider()
+                    .padding(.horizontal)
+                Section(selectedTab: 0)
+                    .padding(.bottom, 30)
+                SectionBottom()
+                Section(selectedTab: 1)
+                    .padding(.bottom, 30)
+                SectionBottom()
+                SwipeProduct(pageCount: 3, visibleEdgeSpace: 16, spacing: 16) { index in
+                    Text("Content \(index)")
                 }
             }
-            .padding(.horizontal, 20)
         }
     }
 }

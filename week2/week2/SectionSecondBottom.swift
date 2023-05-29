@@ -18,6 +18,7 @@ struct SectionSecondBottom: View {
                 Text("구입하기")
             }
         }
+        .padding(.horizontal)
         .frame(height: 67)
         .background(Color("ColorButtonGray"))
     }

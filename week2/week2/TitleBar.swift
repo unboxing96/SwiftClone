@@ -5,6 +5,8 @@
 //  Created by kimpepe on 2023/05/27.
 //
 
+// 문제 : bottom padding인지 margin인지가 사라지지 않음
+
 import SwiftUI
 
 struct TitleBar: View {
@@ -16,6 +18,7 @@ struct TitleBar: View {
             Spacer()
             Image("titleBarLogo")
         }
+        .padding(0)
         .border(.red)
     }
 }
