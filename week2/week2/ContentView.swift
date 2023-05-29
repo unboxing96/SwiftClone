@@ -51,9 +51,7 @@ struct ContentView: View {
                 Section(selectedTab: 1)
                     .padding(.bottom, 30)
                 SectionBottom()
-                SwipeProduct(pageCount: 3, visibleEdgeSpace: 16, spacing: 16) { index in
-                    Text("Content \(index)")
-                }
+                SwipeProductDemo()
             }
         }
     }
