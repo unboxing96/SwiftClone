@@ -23,13 +23,6 @@ struct SwipeProduct<Content: View>: View {
         self.content = content
     }
     
-    private func swipeItemModifier() -> some View {
-        return self
-            .frame(width: UIScreen.main.bounds.width * 0.85, height: 509)
-            .cornerRadius(14)
-            .shadow(color: Color("ColorDividerGray"), radius: 14)
-    }
-    
     var body: some View {
         GeometryReader { proxy in
             let baseOffset: CGFloat = spacing + visibleEdgeSpace
@@ -50,7 +43,6 @@ struct SwipeProduct<Content: View>: View {
                         .shadow(color: Color("ColorDividerGray"), radius: 14)
                 }
             }
-            .contentShape(Rectangle())
             .offset(x: offsetX)
             .gesture(
                 DragGesture()

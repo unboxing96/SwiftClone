@@ -12,14 +12,12 @@ struct SwipePromotion: View {
         TabView {
             ForEach (swipePromotionArray) { swipePro in
                 HStack (alignment: .top, spacing: 0) {
-                    ZStack {
-                        Image(systemName: swipePro.icon)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 45, height: 43)
-                    }
-                    .padding(.top, 20)
-                    .frame(width: 77, height: 138, alignment: .top)
+                    Image(systemName: swipePro.icon)
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+                        .font(.system(size: 45))
+                        .padding(.top, 20)
+                        .padding(.trailing, 10)
                     VStack (alignment: .leading, spacing: 0) {
                         Text(swipePro.title)
                             .font(.system(size: 13))
@@ -40,9 +38,9 @@ struct SwipePromotion: View {
                     .frame(width: 316, height: 138, alignment: .topLeading)
                 }
             }
-            .border(.orange)
+            //            .border(.orange)
         }
-        .border(.orange)
+        //        .border(.orange)
         .frame(width: 393, height: 138)
         .onAppear {
             let indexColor = UIPageControl.appearance()

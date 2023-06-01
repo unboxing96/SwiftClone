@@ -43,8 +43,6 @@ struct ContentView: View {
                 Divider()
                     .padding(.horizontal)
                 SwipePromotion()
-                Divider()
-                    .padding(.horizontal)
                 Section(selectedTab: 0)
                     .padding(.bottom, 30)
                 SectionBottom()

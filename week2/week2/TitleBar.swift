@@ -18,8 +18,7 @@ struct TitleBar: View {
             Spacer()
             Image("titleBarLogo")
         }
-        .padding(0)
-        .border(.red)
+//        .border(.red)
     }
 }
 

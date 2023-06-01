@@ -37,7 +37,7 @@ struct Section: View {
             .padding(.top, 24)
         }
         .frame(width: 393, height: 574)
-        .border(.yellow)
+//        .border(.yellow)
     }
 }
 
