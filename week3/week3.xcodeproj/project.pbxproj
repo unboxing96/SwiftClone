@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3C3A6CD2A2968B600525C32 /* SheetWheelDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3A6CC2A2968B600525C32 /* SheetWheelDatePickerView.swift */; };
+		E3C3A6CF2A297F1200525C32 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3A6CE2A297F1200525C32 /* TestView.swift */; };
+		E3C3A6D12A29C5C900525C32 /* AlarmItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3A6D02A29C5C900525C32 /* AlarmItemView.swift */; };
+		E3C3A6D32A29D9F500525C32 /* MainSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3A6D22A29D9F500525C32 /* MainSheetView.swift */; };
+		E3C3A6D52A29DA2900525C32 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3A6D42A29DA2900525C32 /* SettingView.swift */; };
 		E3E5E4BA2A281997001DAE5E /* week3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E5E4B92A281997001DAE5E /* week3App.swift */; };
 		E3E5E4BC2A281997001DAE5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E5E4BB2A281997001DAE5E /* ContentView.swift */; };
 		E3E5E4BE2A281998001DAE5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3E5E4BD2A281998001DAE5E /* Assets.xcassets */; };
@@ -14,6 +19,7 @@
 		E3E5E4CB2A281998001DAE5E /* week3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E5E4CA2A281998001DAE5E /* week3Tests.swift */; };
 		E3E5E4D52A281998001DAE5E /* week3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E5E4D42A281998001DAE5E /* week3UITests.swift */; };
 		E3E5E4D72A281998001DAE5E /* week3UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E5E4D62A281998001DAE5E /* week3UITestsLaunchTests.swift */; };
+		E3E5E4E42A281BA8001DAE5E /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = E3E5E4E32A281BA8001DAE5E /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E3C3A6CC2A2968B600525C32 /* SheetWheelDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetWheelDatePickerView.swift; sourceTree = "<group>"; };
+		E3C3A6CE2A297F1200525C32 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		E3C3A6D02A29C5C900525C32 /* AlarmItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmItemView.swift; sourceTree = "<group>"; };
+		E3C3A6D22A29D9F500525C32 /* MainSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSheetView.swift; sourceTree = "<group>"; };
+		E3C3A6D42A29DA2900525C32 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		E3E5E4B62A281997001DAE5E /* week3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = week3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E5E4B92A281997001DAE5E /* week3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = week3App.swift; sourceTree = "<group>"; };
 		E3E5E4BB2A281997001DAE5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +55,7 @@
 		E3E5E4D02A281998001DAE5E /* week3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = week3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E5E4D42A281998001DAE5E /* week3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = week3UITests.swift; sourceTree = "<group>"; };
 		E3E5E4D62A281998001DAE5E /* week3UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = week3UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E3E5E4E32A281BA8001DAE5E /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +83,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E3C3A6D82A29E10E00525C32 /* Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				E3C3A6CC2A2968B600525C32 /* SheetWheelDatePickerView.swift */,
+				E3C3A6D22A29D9F500525C32 /* MainSheetView.swift */,
+				E3C3A6D42A29DA2900525C32 /* SettingView.swift */,
+			);
+			path = Sheet;
+			sourceTree = "<group>";
+		};
 		E3E5E4AD2A281997001DAE5E = {
 			isa = PBXGroup;
 			children = (
+				E3E5E4E32A281BA8001DAE5E /* Readme.md */,
 				E3E5E4B82A281997001DAE5E /* week3 */,
 				E3E5E4C92A281998001DAE5E /* week3Tests */,
 				E3E5E4D32A281998001DAE5E /* week3UITests */,
@@ -94,8 +117,11 @@
 		E3E5E4B82A281997001DAE5E /* week3 */ = {
 			isa = PBXGroup;
 			children = (
+				E3C3A6D82A29E10E00525C32 /* Sheet */,
 				E3E5E4B92A281997001DAE5E /* week3App.swift */,
 				E3E5E4BB2A281997001DAE5E /* ContentView.swift */,
+				E3C3A6CE2A297F1200525C32 /* TestView.swift */,
+				E3C3A6D02A29C5C900525C32 /* AlarmItemView.swift */,
 				E3E5E4BD2A281998001DAE5E /* Assets.xcassets */,
 				E3E5E4BF2A281998001DAE5E /* Preview Content */,
 			);
@@ -233,6 +259,7 @@
 			files = (
 				E3E5E4C12A281998001DAE5E /* Preview Assets.xcassets in Resources */,
 				E3E5E4BE2A281998001DAE5E /* Assets.xcassets in Resources */,
+				E3E5E4E42A281BA8001DAE5E /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3C3A6CF2A297F1200525C32 /* TestView.swift in Sources */,
+				E3C3A6D52A29DA2900525C32 /* SettingView.swift in Sources */,
 				E3E5E4BC2A281997001DAE5E /* ContentView.swift in Sources */,
+				E3C3A6D12A29C5C900525C32 /* AlarmItemView.swift in Sources */,
+				E3C3A6D32A29D9F500525C32 /* MainSheetView.swift in Sources */,
+				E3C3A6CD2A2968B600525C32 /* SheetWheelDatePickerView.swift in Sources */,
 				E3E5E4BA2A281997001DAE5E /* week3App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

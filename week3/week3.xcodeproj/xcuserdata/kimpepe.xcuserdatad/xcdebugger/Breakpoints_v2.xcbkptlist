@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "45DBEB78-9C2B-4ABC-9EE8-652F5E384F40"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "144494E7-C66C-463F-9127-8184035BE20E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "week3/Sheet/MainSheetView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "144494E7-C66C-463F-9127-8184035BE20E - d11ca166b91e2bfc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(week3.SheetCancelSaveView, week3.SheetWheelDatePickerView, week3.SheetSettingView)&gt; in week3.MainSheetView.body.getter : some"
+                  moduleName = "week3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kimpepe/Desktop/ADA/SwiftClone/week3/week3/Sheet/MainSheetView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "144494E7-C66C-463F-9127-8184035BE20E - b4c045465992beb8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(week3.SheetCancelSaveView, week3.SheetWheelDatePickerView, week3.SheetSettingView, SwiftUI.Spacer)&gt; in week3.MainSheetView.body.getter : some"
+                  moduleName = "week3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kimpepe/Desktop/ADA/SwiftClone/week3/week3/Sheet/MainSheetView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "248">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
