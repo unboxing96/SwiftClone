@@ -58,7 +58,7 @@ struct SheetWheelDatePickerView: View {
         let timeString = "\(hourString):\(minuteString)"
         
 
-        return [timeString, isPM]
+        return [timeString, isPM, hour, minute]
     }
 }
 
