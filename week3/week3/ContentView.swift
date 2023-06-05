@@ -10,10 +10,13 @@ import SwiftUI
 
 
 struct ContentView: View {
+    @EnvironmentObject var alarmData: AlarmData
+    @State private var isAddAlarmViewPresented = false
     let coloredNavAppearance = UINavigationBarAppearance()
-    @State var alarmArray : [[String]] = []
-    @State var isShownSheet = false
-    @State var selectedAlarmIndex: Int?
+    
+    var sortedAlarms: [Alarm] {
+        alarmData.alarms.sorted(by: { $0.date < $1.date })
+    }
     
     init() {
         coloredNavAppearance.configureWithOpaqueBackground()
@@ -57,15 +60,21 @@ struct ContentView: View {
                 .listRowSeparatorTint(.white)
                 
                 // alarmArray에 원소가 있을 때만 기타 section이 보이게
-                if alarmArray.count != 0 {
+                if sortedAlarms.count != 0 {
                     Section(header: Text("기타").font(.system(size: 17))) {
-                        ForEach(alarmArray.indices, id: \.self) { index in
-                            Button {
-                                selectedAlarmIndex = index
-                            } label: {
-                                AlarmItemView(isOn: true, isPM: alarmArray[index][1], timeString: alarmArray[index][0])
+                        ForEach(sortedAlarms.indices, id: \.self) { index in
+                            NavigationLink(destination: AddAlarmView(alarm: sortedAlarms[index], isPresented: $isAddAlarmViewPresented)) { // Pass sortedAlarms[index] here
+                                HStack {
+                                    Text("\(DateFormatter.timeOnly.string(from: sortedAlarms[index].date))")
+                                    Spacer()
+                                    Toggle("", isOn: $alarmData.alarms[index].isActive)
+                                }
                             }
                         }
+                    }
+                    .sheet(isPresented: $isAddAlarmViewPresented) {
+                        AddAlarmView(isPresented: $isAddAlarmViewPresented)
+                            .environmentObject(alarmData)
                     }
                     .foregroundColor(Color("ColorFontWhite"))
                     .listRowBackground(Color.clear)
@@ -74,17 +83,11 @@ struct ContentView: View {
             }
             .listStyle(.plain)
             .navigationBarTitle("알람")
-            .toolbar {
-                Button {
-                    self.isShownSheet.toggle()
-                    print("+")
-                } label: {
-                    Image(systemName: "plus")
+            .navigationBarItems(trailing:
+                                    NavigationLink(destination: MainSheetView(isAddAlarmViewPresented: $isAddAlarmViewPresented)) {
+                Image(systemName: "plus")
                 }
-                .sheet(isPresented: $isShownSheet) {
-                    MainSheetView(isPresented: $isShownSheet, alarmArray: $alarmArray)
-                }
-            }
+            )
         }
         
         

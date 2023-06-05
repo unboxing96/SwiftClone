@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct MainSheetView: View {
-    @Binding var isPresented: Bool
-    @Binding var alarmArray: [[String]]
+    @Binding var isAddAlarmViewPresented: Bool
 
     var body: some View {
         VStack{
-            SheetWheelDatePickerView(isPresented: $isPresented, alarmArray: $alarmArray)
+            AddAlarmView(isPresented: $isAddAlarmViewPresented)
             SettingView()
             Spacer()
         }

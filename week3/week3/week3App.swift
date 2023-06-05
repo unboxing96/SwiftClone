@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct week3App: App {
+    @StateObject private var alarmData = AlarmData()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(alarmData)
         }
     }
 }
