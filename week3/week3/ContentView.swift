@@ -84,10 +84,16 @@ struct ContentView: View {
             .listStyle(.plain)
             .navigationBarTitle("알람")
             .navigationBarItems(trailing:
-                                    NavigationLink(destination: MainSheetView(isAddAlarmViewPresented: $isAddAlarmViewPresented)) {
-                Image(systemName: "plus")
+                Button(action: {
+                    isAddAlarmViewPresented = true
+                }) {
+                    Image(systemName: "plus")
                 }
             )
+            .sheet(isPresented: $isAddAlarmViewPresented) {
+                MainSheetView(isAddAlarmViewPresented: $isAddAlarmViewPresented)
+                    .environmentObject(alarmData)
+            }
         }
         
         

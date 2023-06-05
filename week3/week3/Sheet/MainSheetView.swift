@@ -20,6 +20,7 @@ struct MainSheetView: View {
     }
 }
 
+
 //struct MainSheetView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        MainSheetView(isPresented: .constant(true), alarmArray: <#T##Binding<[String]>#>)
