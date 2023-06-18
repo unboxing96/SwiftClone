@@ -21,32 +21,36 @@ struct AddAlarmView: View {
     var body: some View {
         NavigationView {
             Form {
-                DatePicker("Time", selection: $alarm.date, displayedComponents: .hourAndMinute)
+                DatePicker("Time", selection: $alarmdate, displayedComponents: .hourAndMinute)
+                    .datePickerStyle(WheelDatePickerStyle())
                     .onChange(of: alarm.date) { newValue in
                         isTimeChanged = true
                     }
             }
             .navigationBarTitle("Add Alarm", displayMode: .inline)
-            .navigationBarItems(trailing:
-                Button(action: {
-                    if let index = alarmData.alarms.firstIndex(where: { $0.id == alarm.id }) {
-                        if !alarm.isActive {
-                            if isTimeChanged {
-                                alarm.isActive = true
-                            }
-                        } else {
+            .navigationBarItems(leading: Button(action: {
+                isPresented = false  // Close the AddAlarmView
+            }, label: {
+                Text("취소")
+            }), trailing:
+                                    Button(action: {
+                if let index = alarmData.alarms.firstIndex(where: { $0.id == alarm.id }) {
+                    if !alarm.isActive {
+                        if isTimeChanged {
                             alarm.isActive = true
                         }
-                        alarmData.alarms[index] = alarm
                     } else {
                         alarm.isActive = true
-                        alarmData.alarms.append(alarm)
                     }
-                    isPresented = false  // Close the AddAlarmView
-                }) {
-                    Text("Save")
+                    alarmData.alarms[index] = alarm
+                } else {
+                    alarm.isActive = true
+                    alarmData.alarms.append(alarm)
                 }
-            )
+                isPresented = false  // Close the AddAlarmView
+            }) {
+                Text("저장")
+            })
         }
     }
 }

@@ -18,7 +18,6 @@ class Alarm: ObservableObject, Identifiable {
     }
 }
 
-
 class AlarmData: ObservableObject {
     @Published var alarms: [Alarm] = []
 }
