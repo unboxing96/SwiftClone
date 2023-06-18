@@ -12,6 +12,8 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var alarmData: AlarmData
     @State private var isAddAlarmViewPresented = false
+    @State private var selectedAlarm : Alarm?
+    
     let coloredNavAppearance = UINavigationBarAppearance()
     
     var sortedAlarms: [Alarm] {
@@ -63,7 +65,11 @@ struct ContentView: View {
                 if sortedAlarms.count != 0 {
                     Section(header: Text("기타").font(.system(size: 17))) {
                         ForEach(sortedAlarms.indices, id: \.self) { index in
-                            NavigationLink(destination: AddAlarmView(alarm: sortedAlarms[index], isPresented: $isAddAlarmViewPresented)) { // Pass sortedAlarms[index] here
+                                
+                            Button {
+                                selectedAlarm = alarmData.alarms[index]
+                                isAddAlarmViewPresented = true
+                            } label: {
                                 HStack {
                                     Text("\(DateFormatter.timeOnly.string(from: sortedAlarms[index].date))")
                                     Spacer()
@@ -71,10 +77,6 @@ struct ContentView: View {
                                 }
                             }
                         }
-                    }
-                    .sheet(isPresented: $isAddAlarmViewPresented) {
-                        AddAlarmView(isPresented: $isAddAlarmViewPresented)
-                            .environmentObject(alarmData)
                     }
                     .foregroundColor(Color("ColorFontWhite"))
                     .listRowBackground(Color.clear)
@@ -90,13 +92,11 @@ struct ContentView: View {
                     Image(systemName: "plus")
                 }
             )
-            .sheet(isPresented: $isAddAlarmViewPresented) {
-                MainSheetView(isAddAlarmViewPresented: $isAddAlarmViewPresented)
-                    .environmentObject(alarmData)
-            }
         }
-        
-        
+        .sheet(isPresented: $isAddAlarmViewPresented) {
+            AddAlarmView(alarm: selectedAlarm, isPresented: $isAddAlarmViewPresented)
+                .environmentObject(alarmData)
+        }
     }
 }
 
